@@ -1,0 +1,20 @@
+let data = [23,21,34,54,22,34,22,34,22];
+let start = 0;
+let end = data.length-1;
+find = 34;
+let pos = undefined;
+function recursiveBinary(data,start,end){
+mid = Math.floor((start+end)/2)
+if(data[mid]===find){
+    pos=mid;
+    return true
+}
+else if(data[mid]<find){
+recursiveBinary(data,mid+1,end)
+}
+else{
+recursiveBinary(data,start,mid-1)
+}
+}
+recursiveBinary(data,start,end)
+console.log(pos)
