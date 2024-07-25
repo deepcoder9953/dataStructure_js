@@ -1,0 +1,20 @@
+function checkAnagram(strng01,strng02){
+    let strObj = {};
+    if(strng01.length !== strng02.length){
+        return false
+    }
+
+    for(char of strng01){
+        strObj[char] = (strObj || 0) + 1;
+    }
+
+    for(char of strng02){
+        if(!strObj[char]){
+            return false
+        }
+        strObj[char]--;
+    }
+    return true
+}
+
+console.log(checkAnagram("cat","tac"))
